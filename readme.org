@@ -1,0 +1,81 @@
+* Shortest crash introduction to R using example of Group Reading Journal
+Link to Group Journal
+https://goo.gl/nc9eZ1
+
+** What is R?
+- Cutting-edge Statistical Software
+- Programming Language to operate it
+- Free, open-source, huge community
+- Main Toolbox for Data Scientists
+
+** Basic set up
+#+ATTR_REVEAL: :frag (roll-in)
+1. Install R (download from CRAN - http://www.r-project.org/) 
+2. Install external GUI
+   - RStudio (download from https://www.rstudio.com/)
+   - Other third party GUIs (Emacs, Eclips, etc.)
+
+** Basic elements in R
+| *Numeric*   | 100, 0, -4.335   |
+| *Character* | ”some letters”   |
+| *Logical*   | TRUE, FALSE      |
+| *Factor*    | Different levels |
+| *Complex*   | 2 + 3i           |
+| *Missing*   | NA, NULL, NaN    |
+
+** Basic Types of R Objects
+#+ATTR_REVEAL: :frag (roll-in)
+  - /Vectors/ 
+  - /Matrix/ 
+  - /Array/ - Multidimensional /Matrix/ 
+  - /Dataframe/ - Set of /Vectors/ of the same length (but can be of different types) 
+  - /List/ - Set of different objects (can also include /Lists/) 
+  - /Closure/ - functions (instructions of what to do)
+ 
+
+** Basic syntax of R
+
+
+#+BEGIN_SRC R
+# This is a comment
+
+# This is a number. Number is a basic type of element.
+42
+
+# This is a Boolean. It is also a basic type of element.
+TRUE
+
+# This is a string. And this is also a basic type of element.
+"John Bechara coordinates our course very well"
+
+# This function c() creates an object of type vector that contains 3 strings
+c("Noah", "Koen", "Geert")
+
+# Actually when you create a vector containing one element (a number)
+42
+
+# This is a function being called with two arguments
+paste("a","b")
+
+# This is a function with an optional named argument
+paste("a","b",sep=",")
+
+# This is assignment. This is how you create objects of different types.
+x <- c("Sjoerd", "Pauline", "Céline", "Kiki", "Marloes", "Patricia", "Sharon", "Lisa")
+y <- seq(1,16,by=2)  # the first 8 odd numbers
+
+# This is how to extract parts of a vector
+x[2]  # "Pauline"
+x[c(1,2,4)]  # c("Sjoerd", "Pauline", "Kiki")
+x[3:5]  # try yourself
+
+# This is how to bind two vectors to form a matrix
+m <- rbind(x, y)
+m <- cbind(x, y)
+
+# This is how to slice a matrix
+m[1,]  # the first row
+m[,1]  # the first column
+m[2:3,1]  # the first element of the second and third row
+#+END_SRC
+
